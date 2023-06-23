@@ -5,8 +5,12 @@
     font-family: "Roboto", sans-serif;
 }
 
-/* ========== Nav ========== */ 
+body, html {
+    height: 100%;
+    margin: 0;
+  }
 
+/* ========== Nav ========== */
 body nav img {
     height: 35px;
     padding: 0px;
@@ -16,46 +20,54 @@ body nav img {
     margin-left: 10px;
 }
 
-.nav {
+nav {
+    position: fixed;
     overflow: hidden;
     background-color: #212121;
-    list-style-type: none;
-    top: 0;
-    position: fixed;
     width: 100%;
+    display: flex;
+    align-items: center;
+    height: 52px;
+    border-bottom: 2px solid #212121;
     z-index: 1;
-  }
-  
-.nav a {
-    float: left;
     color: #ffffff;
+}
+  
+nav > ul {
+    margin-left: auto;
+    margin-right: 16px;
+    margin-right: 30px;
+}
+  
+nav > ul > li {
+    display: inline-block;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 20px;
 }
-  
-.nav a:hover {
+
+nav > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+nav > span {
+    display: flex;
+    align-items: center;
+  }
+
+  nav > ul > li:hover {
     background-color: #717171;
     color: black;
 }
-  
-.nav a.active {
-    background-color: #515151;
-    color: white;
-}
-  
-.nav-right {
-    float: right;
-    margin-right: 30px;
+
+.relative-container {
+    position: relative;
 }
 
 /* ========== Header ========== */
 
-body, html {
-    height: 100%;
-    margin: 0;
-  }
   
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/IMG_20181018_190918_780.jpg");
@@ -68,6 +80,7 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .hero-text { 
@@ -102,14 +115,13 @@ main {
     background-color: #414141;
 }
 
-
-
 h2 {
     text-align: center;
     padding: 20px;
     background-color: #212121;
 }
 
+/* ========== Hall of fame ========== */
 #Hall-of-Fame {
     border: 3px solid #919191 ;
     border-radius: 5px;
@@ -117,27 +129,28 @@ h2 {
     margin:10px;
 }
 
-.grid-container {
-    margin: auto;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: flex-start;
-    justify-items: flex-start;
-    align-content: flex-start;
-}
-
-.grid-container > figure {
-    width: 25%;
+#Hall-of-Fame .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    Gap:10px;
     padding: 10px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     text-align: center;
+    font-style: italic;
+}
+  
+#Hall-of-Fame .grid-container img {
+    width:85%;
+    object-fit: fill;
+    margin: auto;
+    border-radius: 5px;
 }
 
+#item1 {
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 2;
+ }
+ 
+/* ========== Videos ========== */
 
 #section-video .flex-container {
     display: flex;
@@ -169,16 +182,6 @@ h4 {
 }
 
 
-/*
-.flex-container {
-    display: flex;
-    justify-content: center;
-    background-color: #313131;
-    color: white;
-}
-*/
-
-
 #form-section {
     background-color: #313131;
     color: white;
@@ -202,7 +205,7 @@ fieldset {
     margin:auto;
     background-color: #313131;
     width: 525px;
-    margin: 20px;
+    margin: auto;
     padding: 20px;
     font-size: 15px;
     line-height: 1.7;
@@ -215,6 +218,23 @@ legend {
 textarea {
   width: 100%;
   display: block;
+}
+
+
+/* ========== Grid (form) ========== */
+
+.item1 { grid-area: header; }
+.item2 { grid-area: main; }
+.item3 { grid-area: right; }
+
+.form-container {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'main right'
+    'footer footer';
+  gap: 10px;
+  padding: 0px;
 }
 
 /* ========== Footer ========== */
