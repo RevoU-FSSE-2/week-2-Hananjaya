@@ -68,7 +68,6 @@ nav > span {
 
 /* ========== Header ========== */
 
-  
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/IMG_20181018_190918_780.jpg");
     height: 60%;
@@ -80,7 +79,6 @@ nav > span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .hero-text { 
@@ -107,7 +105,6 @@ nav > span {
 
 /* ========== Content ========== */
 
-
 main {
     color: white;
     margin-left: auto;
@@ -132,7 +129,6 @@ h2 {
 #Hall-of-Fame .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    Gap:10px;
     padding: 10px;
     text-align: center;
     font-style: italic;
@@ -154,8 +150,8 @@ h2 {
 
 #section-video .flex-container {
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
     gap: 10px;
     padding: 10px;
 }
@@ -179,8 +175,8 @@ h3 {
 h4 {
     text-align: center;
     font-style:italic;
+    margin-bottom: 30px;
 }
-
 
 #form-section {
     background-color: #313131;
@@ -220,23 +216,6 @@ textarea {
   display: block;
 }
 
-
-/* ========== Grid (form) ========== */
-
-.item1 { grid-area: header; }
-.item2 { grid-area: main; }
-.item3 { grid-area: right; }
-
-.form-container {
-  display: grid;
-  grid-template-areas:
-    'header header'
-    'main right'
-    'footer footer';
-  gap: 10px;
-  padding: 0px;
-}
-
 /* ========== Footer ========== */
 
 .footer{
@@ -246,3 +225,49 @@ textarea {
     padding: 20px;
     background-color: #212121;
 }
+
+
+/* ========== Responsive ========== */
+
+@media only screen and (max-width: 1023px) {
+    .mobile {
+        display: block;
+    }
+          
+    .desktop {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 426px) {
+    .flex-container {
+        width:100px;
+    }
+    fieldset {
+        width:325px;
+    }
+    .hero-text {
+        display: contents;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    iframe {
+        max-width: 480px;
+    }
+      
+    #Hall-of-Fame .grid-container {
+        display: grid;
+        grid-gap: 30px;
+        padding: 30px;
+    }
+      
+    #Hall-of-Fame .grid-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+    
